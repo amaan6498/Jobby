@@ -1,0 +1,105 @@
+.job-container {
+  height: auto;
+  background-color: #000000;
+}
+
+.jobs-page {
+  display: flex;
+  gap: 20px;
+}
+
+.side-bar {
+  width: 20%;
+}
+
+.horizontal-row {
+  width: 85%;
+}
+
+.sidebar-head {
+  color: #ffffff;
+  margin-left: 20px;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin-left: 20px;
+}
+
+li {
+  margin: 10px 0;
+  display: flex;
+  align-items: center;
+}
+
+input[type='checkbox'] {
+  margin-right: 10px;
+}
+
+.emp-label {
+  font-size: 14px;
+  color: #f8fafc;
+  font-weight: 400;
+}
+
+/* Home  */
+.search-container {
+  margin-top: 20px;
+  margin-left: 33px;
+}
+
+.search-input {
+  width: 300px;
+}
+
+/* Loader */
+.loader-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* Failure */
+.failure-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.failure-heading {
+  font-size: 42px;
+  font-family: 'roboto';
+  font-weight: bold;
+  color: #fff;
+}
+.failure-desc {
+  font-size: 20px;
+  font-family: 'roboto';
+  color: #fff;
+}
+
+/*  */
+
+.no-jobs-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 1000px;
+}
+.no-jobs {
+  width: 400px;
+}
+.no-jobs-heading {
+  font-size: 36px;
+  font-family: 'Roboto';
+  font-weight: bold;
+  color: #fff;
+}
+.no-jobs-desc {
+  font-size: 18px;
+  font-family: 'Roboto';
+  color: #fff;
+}

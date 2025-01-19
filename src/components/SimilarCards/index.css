@@ -1,0 +1,49 @@
+.similar-job-div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #202020;
+  margin: 20px;
+  padding: 28px;
+  width: 360px;
+  border-radius: 15px;
+  color: #fff;
+}
+
+.first-container {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.logo-jobs-details {
+  width: 90px;
+  height: auto;
+}
+
+.first-inner-container {
+  display: flex;
+  flex-direction: column;
+  margin-left: 10px;
+}
+
+.second-inner-container {
+  display: flex;
+}
+
+.second-container {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-start;
+}
+
+.dec-similar {
+  text-align: left;
+}
+
+.inner-icon {
+  align-self: center;
+}
+
+.aifill {
+  color: yellow;
+}
