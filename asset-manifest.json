@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/Jobby/static/css/main.78d77ec1.chunk.css",
+    "main.js": "/Jobby/static/js/main.926e64e5.chunk.js",
+    "main.js.map": "/Jobby/static/js/main.926e64e5.chunk.js.map",
+    "runtime-main.js": "/Jobby/static/js/runtime-main.5a12486e.js",
+    "runtime-main.js.map": "/Jobby/static/js/runtime-main.5a12486e.js.map",
+    "static/js/2.d34594bb.chunk.js": "/Jobby/static/js/2.d34594bb.chunk.js",
+    "static/js/2.d34594bb.chunk.js.map": "/Jobby/static/js/2.d34594bb.chunk.js.map",
+    "index.html": "/Jobby/index.html",
+    "static/css/main.78d77ec1.chunk.css.map": "/Jobby/static/css/main.78d77ec1.chunk.css.map",
+    "static/js/2.d34594bb.chunk.js.LICENSE.txt": "/Jobby/static/js/2.d34594bb.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.5a12486e.js",
+    "static/js/2.d34594bb.chunk.js",
+    "static/css/main.78d77ec1.chunk.css",
+    "static/js/main.926e64e5.chunk.js"
+  ]
+}
