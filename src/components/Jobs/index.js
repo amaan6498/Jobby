@@ -46,6 +46,29 @@ const salaryRangesList = [
   },
 ]
 
+const cityList = [
+  {
+    cityId: 'hyderabad',
+    label: 'Hyderabad',
+  },
+  {
+    cityId: 'bangalore',
+    label: 'Bangalore',
+  },
+  {
+    cityId: 'chennai',
+    label: 'Chennai',
+  },
+  {
+    cityId: 'delhi',
+    label: 'Delhi',
+  },
+  {
+    cityId: 'mumbai',
+    label: 'Mumbai',
+  },
+]
+
 const apiStatusConstants = {
   initial: 'INITIAL',
   inProgress: 'INPROGRESS',
@@ -59,6 +82,7 @@ class Jobs extends Component {
     salary: [],
     search: '',
     listOfJobs: [],
+    cityFilter: [],
     apiStatus: apiStatusConstants.initial,
   }
 
@@ -69,10 +93,14 @@ class Jobs extends Component {
   handleUrl = async () => {
     this.setState({apiStatus: apiStatusConstants.inProgress})
     const token = Cookies.get('jwt_token')
-    const {typeOfEmp, salary, search} = this.state
+    const {typeOfEmp, salary, search, cityFilter} = this.state
+
     const url = `https://apis.ccbp.in/jobs?employment_type=${typeOfEmp.join(
       ',',
-    )}&minimum_package=${salary}&search=${search}`
+    )}&minimum_package=${salary}&location=${cityFilter.join(
+      ',',
+    )}&search=${search}`
+
     const options = {
       headers: {
         Authorization: `Bearer ${token}`,
@@ -112,6 +140,18 @@ class Jobs extends Component {
         return {typeOfEmp: typeOfEmp.filter(item => item !== value)}
       }
       return {typeOfEmp: [...typeOfEmp, value]}
+    }, this.handleUrl)
+  }
+
+  handleCityCheckChange = event => {
+    const {value} = event.target
+    this.setState(prevState => {
+      const {cityFilter} = prevState
+
+      if (cityFilter.includes(value)) {
+        return {cityFilter: cityFilter.filter(item => item !== value)}
+      }
+      return {cityFilter: [...cityFilter, value]}
     }, this.handleUrl)
   }
 
@@ -175,6 +215,29 @@ class Jobs extends Component {
             />
             <label className="emp-label" htmlFor={eachItem.salaryRangeId}>
               {eachItem.label}
+            </label>
+          </li>
+        ))}
+      </ul>
+    </>
+  )
+
+  renderCityList = () => (
+    <>
+      <hr className="horizontal-row" />
+      <h4 className="sidebar-head">Select City</h4>
+      <ul>
+        {cityList.map(eachCity => (
+          <li key={eachCity.cityId}>
+            <input
+              type="checkbox"
+              id={eachCity.cityId}
+              name={eachCity.cityId}
+              value={eachCity.cityId}
+              onChange={this.handleCityCheckChange}
+            />
+            <label className="emp-label" htmlFor={eachCity.cityId}>
+              {eachCity.label}
             </label>
           </li>
         ))}
@@ -285,6 +348,8 @@ class Jobs extends Component {
             <Profile />
             {this.renderTypeOfEmployement()}
             {this.renderSalaryRange()}
+            {this.renderCityList()}
+            console.log()
           </div>
           <div className="jobs-home-page">{this.renderSearchBar()}</div>
         </div>
